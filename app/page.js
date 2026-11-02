@@ -1,5 +1,5 @@
 import Contact from "../components/contact";
-import Experience from "../components/Experience";
+import Experience from "../components/experience";
 import Profile from "../components/profile";
 import Projects from "../components/projects";
 import Skills from "../components/skills";
