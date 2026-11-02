@@ -1,10 +1,11 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 export default function Profile() {
   return (
-    <div className="">
+    <div className="mt-5">
       <Tabs
         defaultValue="profile"
         className="w-[500px] flex flex-col justify-center items-center"
@@ -62,6 +63,7 @@ export default function Profile() {
           </Card>
         </TabsContent>
       </Tabs>
+      <Separator className="" />
     </div>
   );
 }
