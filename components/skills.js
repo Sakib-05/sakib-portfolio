@@ -55,12 +55,12 @@ export default function Skills() {
     <section id="skills" className="w-full max-w-5xl px-6 py-16">
       <div className="mb-8 text-center">
         <h2 className="text-3xl font-bold tracking-tight">Skills</h2>
-        <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
+        <p className="mx-auto mt-3 max-w-2xl text-xl text-muted-foreground">
           Technologies and tools I use to design, build, and ship software.
         </p>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="mx-auto grid max-w-3xl gap-5 sm:grid-cols-2">
         {skillSections.map((section) => (
           <Card key={section.title} className="h-full bg-white/80">
             <CardHeader>
@@ -85,12 +85,12 @@ export default function Skills() {
                       height="24"
                       className="size-6 shrink-0"
                     />
-                    <span className="min-w-0 break-words text-xs font-medium">
+                    <span className="min-w-0 break-words text-base font-medium">
                       {skill.name}
                     </span>
                     <span
                       role="tooltip"
-                      className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2.5 py-1.5 text-xs text-background opacity-0 shadow-md transition-opacity group-hover:opacity-100 group-focus-within:opacity-100"
+                      className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2.5 py-1.5 text-base text-background opacity-0 shadow-md transition-opacity group-hover:opacity-100 group-focus-within:opacity-100"
                     >
                       experience (years): {skill.years}
                     </span>

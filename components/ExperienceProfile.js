@@ -24,7 +24,7 @@ export default function ExperienceProfile({ experience }) {
       <div className="mx-auto max-w-5xl">
         <Link
           href="/#experience"
-          className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-blue-700 transition-colors hover:text-blue-900"
+          className="mb-8 inline-flex items-center gap-2 text-lg font-medium text-blue-700 transition-colors hover:text-blue-900"
         >
           <ArrowLeft aria-hidden="true" className="size-4" />
           Back to internship experience
@@ -42,7 +42,7 @@ export default function ExperienceProfile({ experience }) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-8">
-              <p className="text-sm font-medium text-blue-200">
+              <p className="text-lg font-medium text-blue-200">
                 {experience.company}
               </p>
               <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -54,29 +54,43 @@ export default function ExperienceProfile({ experience }) {
           <CardContent className="p-6 sm:p-8">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <p className="text-lg text-muted-foreground">
+                <p className="text-2xl text-muted-foreground">
                   {experience.summary}
                 </p>
               </div>
-              <div className="flex shrink-0 items-center gap-2 text-sm text-muted-foreground">
+              <div className="flex shrink-0 items-center gap-2 text-lg text-muted-foreground">
                 <CalendarDays aria-hidden="true" className="size-4" />
                 {experience.duration}
               </div>
             </div>
 
             <Separator className="my-7" />
-
+            {/* I want the 2 links to be on each end */}
             <div className="space-y-8">
-              <a
-                href={linkedInExperienceUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium text-blue-700 transition-colors hover:text-blue-900"
-              >
-                <ExternalLink aria-hidden="true" className="size-4" />
-                View this experience on LinkedIn
-                <ArrowUpRight aria-hidden="true" className="size-4" />
-              </a>
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                {experience.projectUrl && (
+                  <a
+                    href={experience.projectUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 text-lg font-medium text-blue-700 transition-colors hover:text-blue-900"
+                  >
+                    <ExternalLink aria-hidden="true" className="size-4" />
+                    View the live project
+                    <ArrowUpRight aria-hidden="true" className="size-4" />
+                  </a>
+                )}
+                <a
+                  href={linkedInExperienceUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-lg font-medium text-blue-700 transition-colors hover:text-blue-900"
+                >
+                  <ExternalLink aria-hidden="true" className="size-4" />
+                  View this experience on LinkedIn
+                  <ArrowUpRight aria-hidden="true" className="size-4" />
+                </a>
+              </div>
 
               <section>
                 <CardHeader className="p-0">
@@ -87,7 +101,7 @@ export default function ExperienceProfile({ experience }) {
                 </CardHeader>
                 <ul className="mt-5 space-y-4">
                   {experience.tasks.map((task) => (
-                    <li key={task} className="flex gap-3 text-sm leading-6">
+                    <li key={task} className="flex gap-3 text-lg leading-8">
                       <ArrowDown
                         aria-hidden="true"
                         className="mt-1 size-4 shrink-0 rotate-[-45deg] text-blue-600"
@@ -109,7 +123,7 @@ export default function ExperienceProfile({ experience }) {
                   {experience.technologies.map((technology) => (
                     <span
                       key={technology}
-                      className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1.5 text-xs font-medium text-blue-700"
+                      className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1.5 text-base font-medium text-blue-700"
                     >
                       {technology}
                     </span>

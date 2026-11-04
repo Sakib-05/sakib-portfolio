@@ -8,7 +8,7 @@ export default function Profile() {
     <div className="mt-5">
       <Tabs
         defaultValue="profile"
-        className="w-[500px] flex flex-col justify-center items-center"
+        className="flex w-full max-w-3xl flex-col items-center justify-center px-4"
       >
         <TabsList>
           <TabsTrigger value="profile">Profile</TabsTrigger>
@@ -63,7 +63,6 @@ export default function Profile() {
           </Card>
         </TabsContent>
       </Tabs>
-      <Separator className="" />
     </div>
   );
 }
