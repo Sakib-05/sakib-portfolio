@@ -65,32 +65,57 @@ export default function ExperienceProfile({ experience }) {
             </div>
 
             <Separator className="my-7" />
-            {/* I want the 2 links to be on each end */}
             <div className="space-y-8">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                {experience.projectUrl && (
-                  <a
-                    href={experience.projectUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-lg font-medium text-blue-700 transition-colors hover:text-blue-900"
-                  >
-                    <ExternalLink aria-hidden="true" className="size-4" />
-                    View the live project
-                    <ArrowUpRight aria-hidden="true" className="size-4" />
-                  </a>
-                )}
-                <a
-                  href={linkedInExperienceUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-lg font-medium text-blue-700 transition-colors hover:text-blue-900"
-                >
-                  <ExternalLink aria-hidden="true" className="size-4" />
-                  View this experience on LinkedIn
-                  <ArrowUpRight aria-hidden="true" className="size-4" />
-                </a>
-              </div>
+              {(experience.githubUrl ||
+                experience.projectUrl ||
+                linkedInExperienceUrl) && (
+                <section>
+                  <CardHeader className="p-0">
+                    <CardTitle>Experience links</CardTitle>
+                    <CardDescription>
+                      Explore the related work and experience details
+                    </CardDescription>
+                  </CardHeader>
+                  <div className="mt-5 flex flex-wrap gap-4">
+                    {experience.githubUrl && (
+                      <a
+                        href={experience.githubUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 text-lg font-medium text-blue-700 transition-colors hover:text-blue-900"
+                      >
+                        <ExternalLink aria-hidden="true" className="size-4" />
+                        GitHub repository
+                        <ArrowUpRight aria-hidden="true" className="size-4" />
+                      </a>
+                    )}
+                    {experience.projectUrl && (
+                      <a
+                        href={experience.projectUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 text-lg font-medium text-blue-700 transition-colors hover:text-blue-900"
+                      >
+                        <ExternalLink aria-hidden="true" className="size-4" />
+                        Live project
+                        <ArrowUpRight aria-hidden="true" className="size-4" />
+                      </a>
+                    )}
+                    {linkedInExperienceUrl && (
+                      <a
+                        href={linkedInExperienceUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 text-lg font-medium text-blue-700 transition-colors hover:text-blue-900"
+                      >
+                        <ExternalLink aria-hidden="true" className="size-4" />
+                        LinkedIn experience
+                        <ArrowUpRight aria-hidden="true" className="size-4" />
+                      </a>
+                    )}
+                  </div>
+                </section>
+              )}
 
               <section>
                 <CardHeader className="p-0">
